@@ -8,7 +8,8 @@
 @define-color dark-gray #3c3836;
 @define-color dark-gray2 #504945;
 
-@define-color active-bg #d65d0e;
+@define-color active-bg #fe8019;
+@define-color active-br #d65d0e;
 @define-color active-fg #282828;
 @define-color inactive-fg #a89984;
 
@@ -55,6 +56,7 @@ window#waybar.empty #window {
 }
 #workspaces button.active {
   background: @active-bg;
+  border-bottom: 2px solid @active-br;
   color: @active-fg;
   font-weight: 900;
 }
