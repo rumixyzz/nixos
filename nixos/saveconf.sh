@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-DEST="/home/rumi/repo"
+DEST="/home/rumi/repo/nixos"
 USER_TO_OWN=${SUDO_USER:-root}
 
 bold=$(tput bold)

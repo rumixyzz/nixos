@@ -17,5 +17,6 @@
 	  nvchad
     gradia
     gruvbox-gtk-theme
+    vesktop
 	];
 }
