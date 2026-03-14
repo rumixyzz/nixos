@@ -1,10 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
-	imports = [
-		inputs.nix4nvchad.homeManagerModule
-	];
-	programs.nvchad = {
+	programs.neovim = {
 		enable = true;
 	};
 }
