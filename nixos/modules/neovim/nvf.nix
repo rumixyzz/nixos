@@ -12,6 +12,9 @@
 
 				statusline.lualine.enable = true;
 				autocomplete.nvim-cmp.enable = true;
+
+                                languages.nix.treesitter.enable = true;
+                                languages.lua.treesitter.enable = true;
 		};
 	};
 }
