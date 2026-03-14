@@ -4,8 +4,9 @@
 	programs.eza.enable = true;
 	programs.zsh = {
 		enable = true;
+    enableSyntaxHighlighting = true;
 		shellAliases = {
-			ls = "eza";
+			ls = "eza --icons=always";
 			la = "ls -la";
 		};
 #    initContent = "
@@ -16,6 +17,9 @@
     prezto = {
       enable = true;
       prompt.theme = "sorin";
+      syntaxHighlighting = {
+        highlighters = [ "main" "brackets" "pattern" "line" "cursor" "root" ];
+      };
     };
     initContent = "
       export VISUAL=\"nvim\"
