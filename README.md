@@ -1,5 +1,7 @@
 # nixos
 
+![picture](./pic.jpg)
+
 the entirety of my /etc/nixos directory. Feel free to to just replace yours with mine (maybe except for the hardware-configuration.nix, don't change that one)
 and you will (hopefully) get my setup.
 
