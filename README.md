@@ -1,4 +1,8 @@
 # nixos
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![dwm](https://img.shields.io/badge/--1177AA?logo=dwm)](https://dwm.suckless.org/)
+[![Suckless](https://img.shields.io/badge/--1177AA?logo=suckless)](https://suckless.org/)
 
 ![picture](./pic.jpg)
 
