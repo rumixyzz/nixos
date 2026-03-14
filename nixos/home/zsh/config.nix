@@ -4,7 +4,7 @@
 	programs.eza.enable = true;
 	programs.zsh = {
 		enable = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
 		shellAliases = {
 			ls = "eza --icons=always";
 			la = "ls -la";

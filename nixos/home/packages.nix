@@ -5,7 +5,6 @@
     obs-studio
 	  git
     networkmanagerapplet
-	  neovim
 	  hyprland
     waypaper
 	  htop
@@ -16,7 +15,6 @@
 	  waypaper
 	  nerd-fonts.jetbrains-mono
 	  zsh
-	  nvchad
     gradia
     gruvbox-gtk-theme
     nwg-look
