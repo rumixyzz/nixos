@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -23,4 +24,5 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
+
 }

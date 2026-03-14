@@ -4,7 +4,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    obs-studio
     git
     networkmanagerapplet
     hyprland
