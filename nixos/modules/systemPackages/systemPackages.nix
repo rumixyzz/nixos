@@ -7,5 +7,6 @@
     librewolf
     alejandra
     wl-clipboard
+    imv
   ];
 }

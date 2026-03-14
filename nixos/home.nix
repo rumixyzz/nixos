@@ -12,6 +12,7 @@
     ./home/rofi/config.nix
     ./home/swww/config.nix
     ./home/waybar/config.nix
+    ./home/neovim/config.nix
     ./home/zsh/config.nix
   ];
 

@@ -17,11 +17,12 @@
     waypaper
     nerd-fonts.jetbrains-mono
     zsh
-    gradia
+    hyprshot
     gruvbox-gtk-theme
     nwg-look
     vesktop
     gruvbox-dark-icons-gtk
     nitch
+    mpv
   ];
 }

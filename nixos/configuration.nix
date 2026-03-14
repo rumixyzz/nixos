@@ -12,8 +12,9 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    # Neovim
-    ./modules/neovim/nvf.nix
+    # Neovim with NVF
+    # In order to use this, i need to uncomment the ./home/neovim/config.nix import in home.nix
+    #./modules/neovim/nvf.nix
 
     # system packages
     ./modules/systemPackages/systemPackages.nix
