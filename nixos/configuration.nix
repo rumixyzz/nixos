@@ -18,6 +18,9 @@
 
     # system packages
     ./modules/systemPackages/systemPackages.nix
+
+    # flatpaks
+#    ./modules/nixFlatpaks/nixFlatpaks.nix
   ];
 
   # Bootloader.
@@ -31,7 +34,13 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-  };
+ };
+
+  # Flatpaks
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.config.common.default = "*";
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   # Automatic updating
   system.autoUpgrade.enable = true;
