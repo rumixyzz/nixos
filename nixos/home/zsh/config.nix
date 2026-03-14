@@ -17,5 +17,8 @@
       enable = true;
       prompt.theme = "sorin";
     };
+    initContent = "
+      export VISUAL=\"nvim\"
+    ";
 	};
 }
