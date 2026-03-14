@@ -17,7 +17,7 @@
 			"XCURSOR_SIZE,24"
 			"HYPRCURSOR_SIZE,24"
 		];
-    exec-once = [ "nm-applet" "waybar" ];
+    exec-once = [ "nm-applet" "waybar" "swww-daemon" ];
 		general = {
 			gaps_in = 5;
 			gaps_out = 20;
