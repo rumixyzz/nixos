@@ -8,17 +8,22 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf = {
+    	url = "github:NotAShelf/nvf";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nvf, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
 
       modules = [
+	nvf.nixosModules.default
         ./configuration.nix
 
         home-manager.nixosModules.home-manager
-
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

@@ -6,7 +6,6 @@
 		./home/fontconfig/config.nix
 		./home/git/config.nix
 		./home/hyprland/config.nix
-		./home/neovim/config.nix
 		./home/packages.nix
 		./home/rofi/config.nix
 		./home/swww/config.nix
