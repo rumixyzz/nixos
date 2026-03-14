@@ -6,6 +6,7 @@
     networkmanagerapplet
 	  neovim
 	  hyprland
+    waypaper
 	  htop
 	  rofi
 	  waybar
@@ -17,6 +18,7 @@
 	  nvchad
     gradia
     gruvbox-gtk-theme
+    nwg-look
     vesktop
 	];
 }
