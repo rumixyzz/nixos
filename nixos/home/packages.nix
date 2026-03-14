@@ -20,5 +20,7 @@
     gruvbox-gtk-theme
     nwg-look
     vesktop
+    gruvbox-dark-icons-gtk
+    nitch
 	];
 }

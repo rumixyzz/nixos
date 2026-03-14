@@ -32,6 +32,10 @@
       clock = {
         format = "{:%I:%M %p}";
       };
+      tray = {
+        icon-size = 18;
+        spacing = 8;
+      };
 		};
 	};
 }

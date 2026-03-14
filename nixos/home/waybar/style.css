@@ -104,3 +104,7 @@ window#waybar.empty #window {
 .modules-left {
   margin-left: 6px;
 }
+
+#tray {
+  margin-right: 12px;
+}
