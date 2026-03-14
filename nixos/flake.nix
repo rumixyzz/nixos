@@ -10,17 +10,23 @@
     };
 
     nvf = {
-    	url = "github:NotAShelf/nvf";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nvf,
+    ...
+  } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
 
       modules = [
-	nvf.nixosModules.default
+        nvf.nixosModules.default
         ./configuration.nix
 
         home-manager.nixosModules.home-manager
@@ -28,7 +34,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = {inherit inputs;};
 
           home-manager.users.rumi = ./home.nix;
         }
