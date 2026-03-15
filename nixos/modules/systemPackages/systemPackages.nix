@@ -8,6 +8,7 @@
     alejandra
     flatpak
     wl-clipboard
+    xinit
     imv
   ];
 }

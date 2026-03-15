@@ -21,6 +21,9 @@
 
     # flatpaks
 #    ./modules/nixFlatpaks/nixFlatpaks.nix
+
+    # suckless
+    ./modules/suckless/dwm.nix
   ];
 
   # Bootloader.
@@ -117,7 +120,7 @@
   };
   programs.zsh.enable = true;
 
-  # Autologin
+  # Login
   services.getty.autologinUser = "rumi";
 
   # Allow unfree packages
