@@ -23,7 +23,7 @@
 #    ./modules/nixFlatpaks/nixFlatpaks.nix
 
     # suckless
-    ./modules/suckless/dwm.nix
+#    ./modules/suckless/dwm.nix
   ];
 
   # Bootloader.
@@ -61,6 +61,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
   networking.networkmanager.wifi.powersave = false;
 
   # Set your time zone.

@@ -23,5 +23,6 @@
     gruvbox-dark-icons-gtk
     nitch
     mpv
+    seatd
   ];
 }

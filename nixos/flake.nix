@@ -13,12 +13,18 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri-flake = {
+    	url = "github:sodiboo/niri-flake";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
  };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    niri-flake,
     nvf,
     ...
   } @ inputs: {
@@ -27,12 +33,14 @@
 
       modules = [
         nvf.nixosModules.default
+	niri-flake.nixosModules.niri
         ./configuration.nix
 
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+	  home-manager.backupFileExtension = "backup";
 
           home-manager.extraSpecialArgs = {inherit inputs;};
 

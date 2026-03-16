@@ -8,7 +8,13 @@
     alejandra
     flatpak
     wl-clipboard
-    xinit
     imv
+
+    # for suckless
+#    xinit
+#    xwallpaper
+#    xset
+#    xcompmgr
+#    xsel
   ];
 }
