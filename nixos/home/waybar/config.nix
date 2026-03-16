@@ -5,18 +5,24 @@
 }: {
   programs.waybar = {
     enable = true;
-    style = ./style.css;
+    style = ./river.css;
     settings.mainBar = {
       layer = "top";
-      height = 46;
+      height = 28;
 
-      modules-left = ["hyprland/workspaces" "hyprland/window"];
+      modules-left = ["river/tags" "custom/tile" "river/window"];
       modules-right = ["tray" "pulseaudio" "backlight" "battery" "clock"];
 
-      "hyprland/workspaces" = {
-        persistent-workspaces = {
-          "*" = 5;
-        };
+      "river/tags" = {
+      	num-tags = 9;
+	hide-vacant = true;
+      };
+
+      "custom/tile" = {
+      	format = "[]=";
+      };
+      "river/window" = {
+      	max-length = 150;
       };
 
       pulseaudio = {

@@ -33,76 +33,42 @@ window#waybar {
   background: @background;
   color: @text-color;
   font-family: monospace;
-  font-size: 18pt;
+  font-size: 12pt;
 }
 window#waybar.empty #window {
   background: none;
   border: none;
 }
 
-#workspaces, #tags {
-  background: @dark-gray;
-  border-radius: 8px;
-  border-bottom: 4px solid @dark-gray2;
-  margin:  6px;
+#custom-tile {
+	margin: 0 8px;
+	font-size: 10pt;
+	color: @inactive-fg;
 }
 
 #workspaces button, #tags button {
-  margin: 4px 5px;
-  padding: 0 12px;
-  background: @dark-gray;
-  border-radius: 8px;
   color: @inactive-fg;
+  padding: 0 8px;
 }
 #workspaces button.active, #tags button.focused, #tags button.active {
   background: @active-bg;
-  border-bottom: 2px solid @active-br;
   color: @active-fg;
-  font-weight: 900;
 }
 #window {
-  margin: 6px 10px;
-  background: @dark-gray;
-  border-radius: 8px;
-  border-bottom: 4px solid @dark-gray2;
-  padding: 0 12px;
+  background: @active-bg;
+  color: @active-fg;
+  padding: 0 10px 0 10px;
 }
 
 #pulseaudio, #battery, #clock, #backlight {
-  background: @dark-gray;
-  border-radius: 8px;
-  border-bottom: 4px solid @dark-gray2;
-  margin: 6px 2px;
-  padding: 2px 12px;
-}
-
-#pulseaudio {
-  background: @volume-bg;
-  color: @volume-fg;
-  border-bottom-color: @volume-br;
-}
-#battery {
-  background: @battery-bg;
-  color: @battery-fg;
-  border-bottom-color: @battery-br;
-}
-#clock {
-  background: @clock-bg;
-  color: @clock-fg;
-  border-bottom-color: @clock-br;
-  font-weight: 700;
-}
-#backlight {
-  background: @backlight-bg;
-  color: @backlight-fg;
-  border-bottom-color: @backlight-br;
+  margin: 0 6px;
 }
 
 .modules-right {
-  margin-right: 6px;
+  margin-right: 4px;
 }
 .modules-left {
-  margin-left: 6px;
+  margin-left: 0px;
 }
 
 #tray {
