@@ -7,6 +7,7 @@
     git
     networkmanagerapplet
     hyprland
+    niri
     waypaper
     htop
     rofi

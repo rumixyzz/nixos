@@ -19,6 +19,9 @@
     # system packages
     ./modules/systemPackages/systemPackages.nix
 
+    # enable and setup xorg
+    ./modules/xorg/xorg.nix
+
     # flatpaks
 #    ./modules/nixFlatpaks/nixFlatpaks.nix
 
@@ -126,6 +129,11 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  # Overlays
+  nixpkgs.overlays = [
+  	inputs.niri-flake.overlays.niri
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -13,11 +13,8 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    niri-flake = {
-    	url = "github:sodiboo/niri-flake";
-	inputs.nixpkgs.follows = "nixpkgs";
-    };
+	
+	niri-flake.url = "github:sodiboo/niri-flake";
  };
 
   outputs = {
@@ -32,8 +29,8 @@
       specialArgs = {inherit inputs;};
 
       modules = [
+        niri-flake.nixosModules.niri
         nvf.nixosModules.default
-	niri-flake.nixosModules.niri
         ./configuration.nix
 
         home-manager.nixosModules.home-manager

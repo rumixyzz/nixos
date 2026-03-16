@@ -5,12 +5,12 @@
 }: {
   programs.waybar = {
     enable = true;
-    style = ./river.css;
+    style = ./style.css;
     settings.mainBar = {
       layer = "top";
       height = 28;
 
-      modules-left = ["river/tags" "custom/tile" "river/window"];
+      modules-left = ["niri/workspaces" "niri/window"];
       modules-right = ["tray" "pulseaudio" "backlight" "battery" "clock"];
 
       "river/tags" = {

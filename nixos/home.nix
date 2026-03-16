@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -10,7 +11,8 @@
     ./home/git/config.nix
     ./home/hyprland/config.nix
 #    ./home/river/config.nix
-    ./home/niri/config.nix
+#    ./home/niri/config.nix
+     ./home/awesome/config.nix
     ./home/packages.nix
     ./home/rofi/config.nix
     ./home/swww/config.nix
