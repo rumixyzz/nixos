@@ -63,8 +63,11 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
+  boot.kernelParams = [ "pcie_aspm=off" ];
+  boot.extraModprobeConfig = ''
+	  options rtw88_core disable_ps_mode=1
+	  '';
   networking.networkmanager.enable = true;
-  networking.enableIPv6 = false;
   networking.networkmanager.wifi.powersave = false;
 
   # Set your time zone.

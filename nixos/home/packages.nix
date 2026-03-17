@@ -22,7 +22,7 @@
     nwg-look
     vesktop
     gruvbox-dark-icons-gtk
-    nitch
+    microfetch
     mpv
     seatd
   ];

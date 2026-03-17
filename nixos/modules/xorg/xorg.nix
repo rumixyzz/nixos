@@ -19,10 +19,11 @@ pkgs,
 	# xorg packages to install
 	# note: 'with pkgs.xorg' is no longer needed, as now xorg packages such as xorg.xinit have been renamed to just 'xinit'
 	environment.systemPackages = with pkgs; [
-		xinit    # startx
-		xclip    # required by neovim/vim for using "+ register (normie term: system clipboard)
-		xset     # user preference utility; i use it for setting repeat rate & delay
-		hsetroot # wallpapers
-		picom    # a better compositor than xcompmgr; has vsync, which gets rid of screen tearing (yay)
+		xinit     # startx
+		xclip     # required by neovim/vim for using "+ register (normie term: system clipboard)
+		xset      # user preference utility; i use it for setting repeat rate & delay
+		hsetroot  # wallpapers
+		picom     # a better compositor than xcompmgr; has vsync, which gets rid of screen tearing (yay)
+		flameshot # very cool screenshooter (or shotter, if you prefer that)
 	];
 }
