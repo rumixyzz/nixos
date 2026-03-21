@@ -1,36 +1,23 @@
 {
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
+config,
+pkgs,
+...
 }: {
-  imports = [
-    ./home/alacritty/config.nix
-    ./home/fontconfig/config.nix
-    ./home/git/config.nix
-    ./home/hyprland/config.nix
-#    ./home/river/config.nix
-#    ./home/niri/config.nix
-     ./home/awesome/config.nix
-    ./home/packages.nix
-    ./home/rofi/config.nix
-    ./home/swww/config.nix
-    ./home/waybar/config.nix
-    ./home/neovim/config.nix
-    ./home/zsh/config.nix
+	home.stateVersion = "25.11";
+	home.username = "rumi";
+	home.homeDirectory = "/home/rumi";
+	programs.home-manager.enable = true;
 
-#    ./modules/suckless/st.nix
-#    ./modules/suckless/dmenu.nix
-#    ./modules/suckless/slstatus.nix
-  ];
+	home.sessionVariables = {
+		EDITOR = "nvim";
+		VISUAL = "nvim";
+	};
 
-  home.username = "rumi";
-  home.homeDirectory = "/home/rumi";
-  home.stateVersion = "25.11";
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
+	imports = [
+		./home/alacritty/init.nix
+		./home/neovim/init.nix
+		./home/zsh/init.nix
+		./home/fonts/init.nix
+		./home/common/packages.nix
+	];
 }

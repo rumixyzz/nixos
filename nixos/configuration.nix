@@ -1,33 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
+
 {
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
 
-    # Neovim with NVF
-    # In order to use this, i need to uncomment the ./home/neovim/config.nix import in home.nix
-    #./modules/neovim/nvf.nix
-
-    # system packages
-    ./modules/systemPackages/systemPackages.nix
-
-    # enable and setup xorg
-    ./modules/xorg/xorg.nix
-
-    # flatpaks
-#    ./modules/nixFlatpaks/nixFlatpaks.nix
-
-    # suckless
-#    ./modules/suckless/dwm.nix
-  ];
+      # windowManagers/qtile
+      ./modules/windowManagers/qtile/init.nix
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -36,37 +20,14 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Graphics
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
- };
-
-  # Flatpaks
-  services.flatpak.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.config.common.default = "*";
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-
-  # Automatic updating
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.dates = "weekly";
-
-  # Automaic cleanups
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 10d";
-  nix.settings.auto-optimise-store = true;
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+	
+  # autologin
+  services.getty.autologinUser = "rumi";
 
   # Enable networking
-  boot.kernelParams = [ "pcie_aspm=off" ];
-  boot.extraModprobeConfig = ''
-	  options rtw88_core disable_ps_mode=1
-	  '';
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = false;
 
@@ -86,6 +47,12 @@
     LC_PAPER = "en_IN";
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -110,33 +77,31 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Nix flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
   users.users.rumi = {
     isNormalUser = true;
     description = "rumi";
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      #  thunderbird
+    #  thunderbird
     ];
   };
-  programs.zsh.enable = true;
-
-  # Login
-  services.getty.autologinUser = "rumi";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
-  # Overlays
-  nixpkgs.overlays = [
-  	inputs.niri-flake.overlays.niri
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
+    tree-sitter
+    pamixer
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -164,4 +129,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
+
 }
