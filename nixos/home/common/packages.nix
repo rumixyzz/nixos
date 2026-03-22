@@ -4,12 +4,16 @@ pkgs,
 ...
 }: {
 	home.packages = with pkgs; [
+		alacritty
+		xset
+		xsel
+		xinit
 		librewolf
-		picom
+		dmenu
 		hsetroot
-		nerd-fonts.jetbrains-mono
-		xclip
-                rofi
-                git
+		picom
+		i3blocks
+		git
+        nerd-fonts.jetbrains-mono
 	];
 }

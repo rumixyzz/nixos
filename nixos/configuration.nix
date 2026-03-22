@@ -8,9 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # windowManagers/qtile
-      ./modules/windowManagers/qtile/init.nix
     ];
 
   # Bootloader.
@@ -23,13 +20,28 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-	
-  # autologin
-  services.getty.autologinUser = "rumi";
 
   # Enable networking
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = false;
+
+  # Autologin
+  services.getty.autologinUser = "rumi";
+
+  # Xserver
+  services.xserver = {
+	  enable = true;
+	  displayManager = {
+		  lightdm.enable = false;
+		  startx.enable = true;
+	  };
+  };
+
+  # libinput
+  services.libinput.enable = true;
+
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -78,12 +90,12 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  programs.zsh.enable = true;
   users.users.rumi = {
     isNormalUser = true;
+    ignoreShellProgramCheck = true;
+    shell = pkgs.zsh;
     description = "rumi";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -97,11 +109,9 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    tree-sitter
-    pamixer
+     vim
+     neovim
   ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

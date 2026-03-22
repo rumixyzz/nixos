@@ -6,18 +6,18 @@ pkgs,
 	home.stateVersion = "25.11";
 	home.username = "rumi";
 	home.homeDirectory = "/home/rumi";
-	programs.home-manager.enable = true;
 
 	home.sessionVariables = {
-		EDITOR = "nvim";
-		VISUAL = "nvim";
-	};
+EDITOR = "nvim";
+VISUAL = "nvim";
+};
 
 	imports = [
-		./home/alacritty/init.nix
-		./home/neovim/init.nix
-		./home/zsh/init.nix
-		./home/fonts/init.nix
+		./home/windowManager/i3/init.nix
+        ./home/terminal/alacritty/init.nix
+		./home/editor/nvim/init.nix
+		./home/shell/zsh/init.nix
 		./home/common/packages.nix
+		./home/common/fontconfig.nix
 	];
 }
